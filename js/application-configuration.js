@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-define(['angularAMD', 'angular-route', 'ui-bootstrap', 'angular-sanitize', 'blockUI','jquery','bootstrap'  ], function (angularAMD) {
+define(['angularAMD', 'angular-route', 'ui-bootstrap', 'angular-sanitize', 'blockUI','jquery'  ], function (angularAMD) {
     var app = angular.module("mainModule", ['ngRoute', 'blockUI', 'ngSanitize', 'ui.bootstrap' ]);
    
     app.filter("leadingZeroes", function () {

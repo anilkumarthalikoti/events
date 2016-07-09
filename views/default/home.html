@@ -1,0 +1,413 @@
+
+<div ng-controller="defaultController" id="slides_control">
+ 
+ <nav class="navbar navbar-default"  >
+  <div class="container-fluid">
+    <div class="navbar-header">
+    
+      <a class="navbar-brand text-center" href="#"><span class="fa-stack fa-lg">
+	    <i class="fa fa-circle fa-stack-2x"></i>
+    	<i class="fa fa-smile-o fa-stack-2x fa-inverse"></i>
+      	</span>Events App</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" style="zoom:80%">
+   
+      <ul class="nav navbar-nav navbar-right"  >
+        <li class="text-center" ><a href="javascript:void(0)" onClick="openSignUp()"><span class="fa-stack fa-lg">
+      	<i class="fa fa-circle fa-stack-2x"></i>
+      	<i class="fa fa-user fa-stack-1x fa-inverse"></i>
+      	</span>Sign Up</a></li>
+        <li class="text-center"><a href="javascript:void(0)" onClick="openLogin()"><span class="fa-stack fa-lg">
+      	<i class="fa fa-circle fa-stack-2x"></i>
+      	<i class="fa fa-sign-in fa-stack-1x fa-inverse"></i>
+      	</span>Login</a></li>
+		
+      </ul>
+	   
+</div>
+	  
+	  
+  
+</nav>
+ 
+ <div>
+      <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}">
+          <div class="carousel-caption">
+            <h4>Slide {{$index+1}}</h4>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+ 
+<!-- slide image end -->
+ 
+<!-- container start -->
+<div class="container-fluid">	
+	<h1 class="header_sub">Welcome to Events App</h1>
+    <!-- 1st row start -->
+    <div class="row">
+    	<!-- col-1 start -->
+    	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        	<p>Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.
+             Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.
+              Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.
+               Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.
+                Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.
+                 Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.
+                  Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.
+                   Some text here. Some text here. Some text here. Some text here. Some text here. Some text here. Some text here.</p>
+        </div>
+        <!-- col-1 end -->
+        <div class="clearfi visible-xs"></div>
+        <!-- col-2 start -->
+    	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	   	    <img class="img-responsive img-rounded img-thumbnail box-shadow-1" src="img/event.jpg" width="100%" ></div>
+        <!-- col-2 end -->
+
+    </div>	
+	<!-- 1st row end -->
+    
+    <!-- 2nd row start -->
+    <div class="row">
+    	<br>
+    	<!-- col start -->
+    	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+   	   		<img class="img-responsive rounded-corners" src="img/thoumb1.jpg" width="100%" alt="">
+            <p  class="rounded-corners-2 r-corner-p">Some text here. Some text here. Some text here. Some text here.</p>
+        </div>
+        
+        <div class="clearfix visible-xs"></div>
+        
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+   	   		<img class="img-responsive rounded-corners" src="img/thoumb2.jpg" width="100%" alt="">
+            <p  class="rounded-corners-2 r-corner-p">Some text here. Some text here. Some text here. Some text here.</p>
+        </div>
+        
+        <div class="clearfix visible-sm visible-xs"></div>
+        
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+   	   		<img class="img-responsive rounded-corners" src="img/thoumb3.jpg" width="100%" alt="">
+            <p  class="rounded-corners-2 r-corner-p">Some text here. Some text here. Some text here. Some text here.</p>
+        </div>
+        
+        <div class="clearfix visible-xs"></div>
+        
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+   	   		<img class="img-responsive rounded-corners" src="img/thoumb5.jpg" width="100%" alt="">
+            <p  class="rounded-corners-2 r-corner-p">Some text here. Some text here. Some text here. Some text here.</p>
+        </div>
+        <!-- col end -->     
+    </div>	
+	<!-- 2nd row end -->    
+   
+</div>
+<!-- container end -->
+
+<!-- footer start -->
+<footer class="container-fluid">
+	<div class="row">
+        <div class="col-sm-6 col-sm-push-6 text-right">
+        	<ul class="social-list">            
+            <a href="https://www.facebook.com/" target="_blank" class="tip" data-toggle="tooltip" data-placement="top" title="Like us on Facebook" ><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" class="tip" data-toggle="tooltip" data-placement="top" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://plus.google.com/" target="_blank" class="tip" data-toggle="tooltip" data-placement="top" title="Follow us on Google+"><i class="fa fa-google-plus"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" class="tip" data-toggle="tooltip" data-placement="top" title="Subscribe us on Youtube"><i class="fa fa-youtube-play"></i></a>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
+        	<p>Copyright &copy; Events App 2016. All Rights Reserved</p>
+        </div>
+    	
+    </div>
+</footer>
+ 
+    <div class="modal fade" id="login-modal" modal='loginModel' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+	        <div class="modal-content">
+	          <div class="modal-header login_modal_header">
+	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	            <h2 class="modal-title" id="myModalLabel" >Login to Your Account</h2>
+              </div>
+	          <div class="modal-body login-modal">
+	            <p></p>
+	            <br/>
+	            <div class="clearfix"></div>
+	            <div id='social-icons-conatainer'>
+	              <div class='modal-body-left'>
+	                <div class="form-group">
+	                  <div class="input-group">
+	                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+	                    <input type="text" class="form-control" id="login_username" ng-model="email" placeholder="E-mail" >
+                      </div>
+	                  <span class="help-block has-error" id="email-error"></span> </div>
+	                <div class="form-group">
+	                  <div class="input-group">
+	                    <div class="input-group-addon"><i class="fa fa-lock" style="padding:0px 2px 0 2px;"></i></div>
+	                    <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password">
+                      </div>
+	                  <span class="help-block has-error" id="password-error">{{errorMessage}}</span> </div>
+	                <div class="btn btn-primary modal-login-btn" ng-click="doLogin()">Login</div> <div class="login-link text-center">Lost your password?</div> </div>
+	              <div class='modal-body-right'>
+	                <div class="modal-social-icons"> <a href='javascript:void(0)' class="btn btn-default facebook" ng-click="fblogin()"> <i class="fa fa-facebook modal-icons"></i> Login with Facebook </a> <a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Login with Google </a> </div>
+                  </div>
+	              <div id='center-line'> OR </div>
+                </div>
+	            <div class="clearfix"></div>
+	            <div class="form-group modal-register-btn">
+	              <button class="btn btn-default"> New User Please Register</button>
+                </div>
+              </div>
+	          <div class="clearfix"></div>
+	          <div class="modal-footer login_modal_footer"></div>
+            </div>
+          </div>
+        </div>
+    
+<!-- signup-modal -->
+<div id="signup-modal" modal="signupModel" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header login_modal_header">
+	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title" id="myModalLabel">Sign up</h2>
+      </div>
+      <div class="modal-body">
+        <h4 class="text-info">Select Sign up type</h4>
+        	<div class="form-group">             
+              <select class="form-control" name="sign-up" id="sign-up" ng-model="userTypeCode">
+              	<option value="" selected disabled>Select Type..</option>
+                <option value="BMOO">Business Owener / Manager</option>
+                <option value="CUST">Customer</option>
+              </select>
+              </div>
+              <div class="sign-up-opt-1 box">
+               <form class="form-inline">	
+              	<div class="row">
+                	<div class="col-xs-12">
+                        <h4 class="text-primary">Looking for a way to promote your event related business!</h4>
+                        <h4 class="text-primary">Partner with us and we can increase your revenue!</h4>
+                        <br>
+                    </div>
+                </div>                
+                <div class="row">
+                	<div class="col-xs-6">                        
+                    	<div class="input-group">
+                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                          <input type="text" class="form-control" placeholder="First Name" ng-model="b_firstname">
+                     	</div> 
+                    </div>                         
+                    <div class="col-xs-6">
+                        <div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                          <input type="text" class="form-control" placeholder="Last Name" ng-model="b_lastname">                        
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                          <input type="email" class="form-control" placeholder="E-mail" ng-model="b_email">                        
+                        </div>
+                    </div>
+                </div>                
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-6">                        
+                    	<div class="input-group">
+                          <div class="input-group-addon"><i class="fa fa-lock" style="padding-right:5px;"></i></div>
+                          <input type="pasword" class="form-control" placeholder="Password" ng-model="b_password">
+                     	</div> 
+                    </div>                         
+                    <div class="col-xs-6">
+                        <div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-unlock"></i></div>
+                          <input type="password" class="form-control" placeholder="Confirm Password" ng-model="b_cpassword">                        
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                          <input type="text" class="form-control" placeholder="Business Name" ng-model="b_businessname">                        
+                        </div>
+                    </div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
+                          <input type="text" class="form-control" placeholder="Contact no" ng-model="b_contactno">                        
+                        </div>
+                    </div>
+                </div>
+				  <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                               <select class="form-control" ng-model="businessTypeCode">
+                          	<option value="" disabled selected>Select Business type</option>
+                          	<option ng-repeat="business in businessTypes" value="{{business.code}}">{{business.businessTypeName}}</option>                      
+                          </select>                  
+                        </div>
+                    </div>
+                </div> 
+                <div class="row" style="padding-top:15px;">
+				                	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-home"></i></div>
+                          <select class="form-control" ng-model="state" ng-change="updateCity()">
+                          	<option value="" disabled selected>Select Business State</option>
+                          	<option ng-repeat="state in states" value="{{state.stateCode}}">{{state.stateName}}</option>                      
+                          </select>                        
+                        </div>
+                    </div>
+                	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-home"></i></div>
+                          <select class="form-control" ng-model="city">
+                          	<option value="" disabled selected>Select Business City</option>
+							
+                          	<option ng-repeat="city in cites" value="{{city.cityId}}">{{city.cityName}}</option>
+                                                      
+                          </select>                        
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12">                      
+                    	<div >
+                            <label class="checkbox-inline"><input  type="checkbox" value="">&nbsp; &nbsp; Happy to receive newsletter and other updates from our site?</label>
+                        </div>
+                    </div>    
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12">                      
+                    	<ol class="text-warning" type="i">
+                          <li>Increase Booking / Revenue.</li>
+                          <li>No need to maintain your own site.</li>
+                          <li>24/7/365 Professionally trained suffort for a great customer experience. Call +91 #####  #####</li>
+                        </ol>
+                        <p><span class="btn btn-link">Terms of use</span><span class="btn btn-link">Privace Policy</span></p> 
+                    </div>                    
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12">                      
+                    	<button type="button" class="btn btn-primary" ng-click="signup()">Submit</button>
+                    </div>    
+                </div>
+               </form> 
+              </div>
+              
+			  <div class="sign-up-opt-2 box">
+              	<form class="form-inline">	
+              	<div class="row">
+                	<div class="col-xs-12">
+                        <h4 class="text-primary">Relax! We have got you covered!</h4>
+                        <h4 class="text-primary">We provide all the leads, tips and ideas you need to make your event succes.</h4>
+                        <br>
+                    </div>
+                </div>                
+                <div class="row">
+                	<div class="col-xs-6">                        
+                    	<div class="input-group">
+                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                          <input type="text" class="form-control" placeholder="First Name" ng-model="c_firstname">
+                     	</div> 
+                    </div>                         
+                    <div class="col-xs-6">
+                        <div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                          <input type="text" class="form-control" placeholder="Last Name" ng-model="c_lastname" >                        
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                          <input type="email" class="form-control" placeholder="E-mail" ng-model="c_email">                        
+                        </div>
+                    </div>
+                </div>                
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-6">                        
+                    	<div class="input-group">
+                          <div class="input-group-addon"><i class="fa fa-lock" style="padding-right:5px;"></i></div>
+                          <input type="pasword" class="form-control" placeholder="Password" ng-model="c_password">
+                     	</div> 
+                    </div>                         
+                    <div class="col-xs-6">
+                        <div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-unlock"></i></div>
+                          <input type="password" class="form-control" placeholder="Confirm Password" ng-model="c_confirmpassword">                        
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    	<div class="input-group">	
+                          <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                          <input type="number" class="form-control" placeholder="Contact Number" ng-model="c_contactno">                        
+                        </div>
+                    </div>
+                </div>                
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12">                      
+                    	<div >
+                            <label class="checkbox-inline"><input type="checkbox" value="">&nbsp; &nbsp; Happy to receive newsletter and other updates from our site?</label>
+                        </div>
+                    </div>    
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12">                      
+                    	<ol class="text-warning" type="i">
+                          <li>Make your event memorable</li>                          
+                        </ol>
+                        <p><span class="btn btn-link">Terms of use</span><span class="btn btn-link">Privace Policy</span></p> 
+                    </div>                    
+                </div>
+                <div class="row" style="padding-top:15px;">
+                	<div class="col-xs-12">                      
+                    	<button type="button" class="btn btn-primary" ng-click="signup()">Submit</button>
+                    </div>    
+                </div>
+               </form> 
+              </div>
+               
+			<script type="text/javascript">
+                $(document).ready(function(){
+                    $("#sign-up").change(function(){
+                        $(this).find("option:selected").each(function(){
+                            if($(this).attr("value")=="BMOO"){
+                                $(".box").not(".sign-up-opt-1").hide();
+                                $(".sign-up-opt-1").show();
+                            }
+                            else if($(this).attr("value")=="CUST"){
+                                $(".box").not(".sign-up-opt-2").hide();
+                                $(".sign-up-opt-2").show();
+                            }
+                           
+                            else{
+                                $(".box").hide();
+                            }
+                        });
+                    }).change();
+                });
+            </script>            
+            
+      </div>      
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- end of sign up model-->
+  </div>
+ 
