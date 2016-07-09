@@ -4,6 +4,24 @@ define(['application-configuration', 'defaultService', 'alertsService'], functio
     app.register.controller('defaultController', ['$scope', '$rootScope', 'defaultService', 'alertsService', 
         function ($scope, $rootScope,defaultService, alertsService ) {
 
+
+    	  $scope.myInterval = 3000;
+    	  $scope.slides = [
+    	    {
+    	      image: 'img/img1.jpg'
+    	    },
+    	    {
+    	      image: 'img/img2.jpg'
+    	    },
+    	    {
+    	      image: 'img/img3.jpg'
+    	    },
+    	    {
+    	      image: 'img/img4.jpg'
+    	    }
+    	  ];   	
+    	
+    	
             $rootScope.closeAlert = alertsService.closeAlert;
             $rootScope.alerts = [];
 
