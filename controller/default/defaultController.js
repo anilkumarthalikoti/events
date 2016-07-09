@@ -3,8 +3,7 @@ define(['application-configuration', 'defaultService', 'alertsService'], functio
 
     app.register.controller('defaultController', ['$scope', '$rootScope', 'defaultService', 'alertsService', 
         function ($scope, $rootScope,defaultService, alertsService ) {
-
-
+ 
     	  $scope.myInterval = 3000;
     	  $scope.slides = [
     	    {
@@ -24,11 +23,12 @@ define(['application-configuration', 'defaultService', 'alertsService'], functio
     	
             $rootScope.closeAlert = alertsService.closeAlert;
             $rootScope.alerts = [];
-
+$scope.email = "anil2k12@gmail.com";               
+                $scope.password = "anil123$";
             $scope.initializeController = function () {
                
-                $scope.UserName = "";               
-                $scope.Password = "";
+                $scope.email = "anil2k12@gmail.com";               
+                $scope.password = "anil123$";
 
                 //alertsService.RenderSuccessMessage("Please register if you do not have an account.");
 
@@ -37,11 +37,15 @@ define(['application-configuration', 'defaultService', 'alertsService'], functio
             $scope.login = function () {
                 $rootScope.IsloggedIn = false;
                 var user = $scope.createLoginCredentials();
-                defaultService.login(user, $scope.loginCompleted, $scope.loginError);
+                defaultService.getStates(function(suc){
+                    alert(suc);
+                },function(fail){});
+               // defaultService.login(user, $scope.loginCompleted, $scope.loginError);
                
             }
 
             $scope.loginCompleted = function (response) {
+                alert(response);
             var data=JSON.parse(JSON.stringify(response))[0];
           if(data.loginPwd!=$scope.Password){
                alertsService.RenderErrorMessage("Invalid Credentials");
@@ -73,9 +77,9 @@ define(['application-configuration', 'defaultService', 'alertsService'], functio
 
                 var user = new Object();
                
-                user.UserName = $scope.UserName;              
-                user.Password = $scope.Password;
-             
+                user.userName = $scope.email;              
+                user.password = $scope.password;
+                user.businessTypeCode='BQH';
                 return user;
 
             }
@@ -90,10 +94,10 @@ define(['application-configuration', 'defaultService', 'alertsService'], functio
 
 function openLogin(){
  
-$('#signup-modal').modal('hide');
-$('#login-modal').modal('show');
+            //alert('pigon');
+//$('#loginModal').modal('show');
 }
 function openSignUp(){
-$('#login-modal').modal('hide');
-$('#signup-modal').modal('show');
+ 
+//$('#signupModal').fadeIn();
 }

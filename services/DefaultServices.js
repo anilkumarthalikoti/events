@@ -3,12 +3,12 @@ define(['application-configuration', 'ajaxService'], function (app) {
     app.register.service('defaultService', ['ajaxService', function (ajaxService) {
 
         this.registerUser = function (user, successFunction, errorFunction) {
-            ajaxService.AjaxPostWithNoAuthenication(user, "/api/user/RegisterUser", successFunction, errorFunction);
+            ajaxService.AjaxPostWithNoAuthenication(user, "login", successFunction, errorFunction);
         };
 
         this.login = function (user, successFunction, errorFunction) {
              
-            ajaxService.AjaxPostWithNoAuthenication(user, "api/user/user.php", successFunction, errorFunction);
+            ajaxService.AjaxPost(user, "login", successFunction, errorFunction);
         };
 
         this.getUser = function (successFunction, errorFunction) {

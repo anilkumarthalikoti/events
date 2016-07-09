@@ -4,12 +4,20 @@ define(['application-configuration'], function (app) {
     app.register.service('ajaxService', ['$http', 'blockUI', function ($http, blockUI) {
 
         // setting timeout of 1 second to simulate a busy server.
-var baseurl="http://localhost:8080/events/";
-        this.AjaxPost = function (data, route, successFunction, errorFunction) {
+var baseurl="http://localhost:8080/event/";
+        this.AjaxPost = function (params, route, successFunction, errorFunction) {
             route=baseurl+route;
+        var conf=    {
+       url:route,
+       method:"POST",
+       async:true,
+        dataType : 'jsonp',   //you may use jsonp for cross origin request
+        crossDomain:true,
+    data:JSON.stringify(params)
+            };
             blockUI.start();
             setTimeout(function () {
-                $http.post(route, data).success(function (response, status, headers, config) {
+                $http(conf).success(function (response, status, headers, config) {
                     blockUI.stop();
                     successFunction(response, status);
                 }).error(function (response) {
@@ -23,9 +31,21 @@ var baseurl="http://localhost:8080/events/";
 
         this.AjaxPostWithNoAuthenication = function (data, route, successFunction, errorFunction) {
 		route=baseurl+route;
+               
+                  var conf=    {
+       url:route,
+       method:"POST",
+       datatype:'jsonp',
+       headers: {
+                  'Authorization': 'Basic dGVzdDp0ZXN0',
+                  'Content-Type': 'application/x-www-form-urlencoded'
+       },
+       data:JSON.stringify(data)
+   };
+ 
             blockUI.start();
             setTimeout(function () {
-                $http.post(route, data).success(function (response, status, headers, config) {
+                $http.post(conf, JSON.stringify(data)).success(function (response, status, headers, config) {
                     blockUI.stop();
                     successFunction(response, status);
                 }).error(function (response) {

@@ -13,8 +13,12 @@ define(['angularAMD', 'angular-route', 'ui-bootstrap', 'angular-sanitize', 'bloc
    
 
     app.config(function ($httpProvider) {
-        $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-        $httpProvider.defaults.withCredentials = true;
+      //  $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+      // $httpProvider.defaults.withCredentials = true;
+   $httpProvider.defaults.headers.delete = {};
+$httpProvider.defaults.headers.delete ['auth-token'] = 'C3PO R2D2';
+        $httpProvider.defaults.useXDomain = true;
+       delete $httpProvider.defaults.headers.common['X-Requested-With'];
     });
 
     app.config(function (blockUIConfigProvider) {

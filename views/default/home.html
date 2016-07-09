@@ -10,14 +10,16 @@
     	<i class="fa fa-smile-o fa-stack-2x fa-inverse"></i>
       	</span>Events App</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar" style="zoom:80%">
+    <div class="collapse navbar-collapse" id="myNavbar" style="zoom:90%">
    
       <ul class="nav navbar-nav navbar-right"  >
-        <li class="text-center" ><a href="javascript:void(0)" onClick="openSignUp()"><span class="fa-stack fa-lg">
+          <li class="text-center" ><a href=""  data-target="#signupModel" data-toggle="modal" onclick="openSignUp()"><span class="fa-stack fa-lg">
       	<i class="fa fa-circle fa-stack-2x"></i>
       	<i class="fa fa-user fa-stack-1x fa-inverse"></i>
       	</span>Sign Up</a></li>
-        <li class="text-center"><a href="javascript:void(0)" onClick="openLogin()"><span class="fa-stack fa-lg">
+        <li class="text-center"   >
+            
+            <a href="" data-target="#loginModal" data-toggle="modal" onclick="openLogin()"><span class="fa-stack fa-lg">
       	<i class="fa fa-circle fa-stack-2x"></i>
       	<i class="fa fa-sign-in fa-stack-1x fa-inverse"></i>
       	</span>Login</a></li>
@@ -123,7 +125,7 @@
     </div>
 </footer>
  
-    <div class="modal fade" id="login-modal" modal='loginModel' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" role="dialog" id="loginModal">
     <div class="modal-dialog">
 	        <div class="modal-content">
 	          <div class="modal-header login_modal_header">
@@ -148,7 +150,7 @@
 	                    <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password">
                       </div>
 	                  <span class="help-block has-error" id="password-error">{{errorMessage}}</span> </div>
-	                <div class="btn btn-primary modal-login-btn" ng-click="doLogin()">Login</div> <div class="login-link text-center">Lost your password?</div> </div>
+	                <div class="btn btn-primary modal-login-btn" ng-click="login()">Login</div> <div class="login-link text-center">Lost your password?</div> </div>
 	              <div class='modal-body-right'>
 	                <div class="modal-social-icons"> <a href='javascript:void(0)' class="btn btn-default facebook" ng-click="fblogin()"> <i class="fa fa-facebook modal-icons"></i> Login with Facebook </a> <a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Login with Google </a> </div>
                   </div>
@@ -166,7 +168,7 @@
         </div>
     
 <!-- signup-modal -->
-<div id="signup-modal" modal="signupModel" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="signupModel" modal="signupModel" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
 
     <!-- Modal content-->

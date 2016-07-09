@@ -40,7 +40,7 @@ require.config({
         'blockUI': ['angular'],
         'angular-sanitize': ['angular'],
         'ui-bootstrap': ['angular'],
-	'jquery':['angular']
+	'jquery':['angular'] 
          
     },
 
